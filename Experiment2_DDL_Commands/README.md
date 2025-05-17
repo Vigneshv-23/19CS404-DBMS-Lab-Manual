@@ -104,52 +104,82 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+```
+Create a table named Employees with the following constraints:
 
+EmployeeID should be the primary key.
+FirstName and LastName should be NOT NULL.
+Email should be unique.
+Salary should be greater than 0.
+DepartmentID should be a foreign key referencing the Departments table.
+```
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE Employees(
+EmployeeID INTEGER PRIMARY KEY,
+FirstName TEXT NOT NULL,
+LastName TEXT NOT NULL,
+Email TEXT UNIQUE,
+Salary INTEGER CHECK(SALARY>0),
+DepartmentID INTEGER,
+FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+);
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/e9f1f6a1-d785-4347-9df9-84359bf2c216)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+```
+Create a table named Products with the following constraints:
+
+ProductID should be the primary key.
+ProductName should be NOT NULL.
+Price is of real datatype and should be greater than 0.
+Stock is of integer datatype and should be greater than or equal to 0.
+```
 
 ```sql
--- Paste your SQL code below for Question 2
+CREATE TABLE Products(
+ProductID INTEGER PRIMARY KEY,
+ProductName TEXT NOT NULL,
+Price REAL CHECK(Price>0),
+Stock INTEGER CHECK(Stock>0)
+);
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/26ffd3c7-b5c9-476e-9a35-3b61cb74c7fe)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Write a SQL query to add a column named Date_of_birth as Date in the Student_details table.
 
 ```sql
--- Paste your SQL code below for Question 3
+ALTER TABLE Student_details
+ADD COLUMN Date_of_birth Date
 ```
 
 **Output:**
-
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/0e30cb33-5edb-4b0e-9e8f-ee7592379db7)
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write an SQL query to add a new column salary of type INTEGER to the Employees table, with a CHECK constraint that ensures the value in this column is greater than 0.
 
 ```sql
--- Paste your SQL code below for Question 4
+ALTER TABLE Employees
+ADD COLUMN salary INTEGER CHECK(salary>0)
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/db4c16d8-a006-4c86-848d-f30fdb769612)
+
 
 **Question 5**
 ---
